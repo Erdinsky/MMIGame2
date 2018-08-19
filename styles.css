@@ -1,0 +1,117 @@
+body {
+    background: darkseagreen;
+}
+
+
+.nextButton{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    border-color: cadetblue;
+    background-color: cadetblue;
+    margin-left: 50%;
+
+    font-size: 20px;
+    font-style: italic;
+
+
+}
+
+.categoryFrame{
+    height: 50px;
+    width:200px;
+    background: floralwhite;
+
+    border-radius : 10px;
+    margin-left : 50%;
+
+    text-align : center;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.questionFrame{
+    height:50px;
+    width:405px;
+    background: cornflowerblue;
+
+    border-radius: 10px;
+
+    margin-left: 42%;
+    margin-top: 50px;
+
+}
+
+.answers{
+    height: 100px;
+    width: 405px;
+    background: cornflowerblue;
+
+    border-radius: 10px;
+
+    margin-left :42%;
+
+    margin-top:50px;
+    margin-bottom: 50px;
+
+}
+
+.answerFrame1{
+    height: 50px;
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+
+
+  }
+.answerFrame2{
+    height: 50px;
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+
+
+}
+
+.answerFrame3{
+    height: 50px;
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+
+}
+.answerFrame4{
+    height: 50px;
+    width: 200px;
+    background: white;
+    border-radius: 10px;
+    display: inline-block;
+
+}
+
+.answerFrame1:hover{
+    background: orange;
+}
+
+.answerFrame2:hover{
+    background: orange;
+}
+
+.answerFrame3:hover{
+    background: orange;
+}
+
+.answerFrame4:hover{
+    background: orange;
+}
+
+.nextButton:hover{
+    border-color: red;
+}
+
+.hidden{
+    display: none;
+}
