@@ -16,6 +16,7 @@ ModelGame.CategoryView = function () {
     }
     //METHOD GETS QUESTION AND ANSWERS FROM "CATEGORIES.JS"
     function setUpQuestionAndAnswers(question, answer1, answer2, answer3, answer4){
+
         questionFrame = document.querySelector(".questionFrame");
         answerFrame1 = document.querySelector(".answerFrame1");
         answerFrame2 = document.querySelector(".answerFrame2");
@@ -39,6 +40,9 @@ ModelGame.CategoryView = function () {
         answerFrame2.addEventListener("click", answerFrame2Clicked);
         answerFrame3.addEventListener("click", answerFrame3Clicked);
         answerFrame4.addEventListener("click", answerFrame4Clicked);
+
+
+
     }
 
 
@@ -55,7 +59,7 @@ ModelGame.CategoryView = function () {
         answerFrame3.style.background = "white";
         answerFrame4.style.background = "white";
 
-        nextButton.classList.remove("hidden");
+
     }
 
     function answerFrame2Clicked() {
@@ -71,7 +75,7 @@ ModelGame.CategoryView = function () {
         answerFrame3.style.background = "white";
         answerFrame4.style.background = "white";
 
-        nextButton.classList.remove("hidden");
+
     }
 
     function answerFrame3Clicked() {
@@ -87,7 +91,6 @@ ModelGame.CategoryView = function () {
         answerFrame1.style.background = "white";
         answerFrame4.style.background = "white";
 
-        nextButton.classList.remove("hidden");
     }
 
     function answerFrame4Clicked() {
@@ -102,7 +105,7 @@ ModelGame.CategoryView = function () {
         answerFrame3.style.background = "white";
         answerFrame1.style.background = "white";
 
-        nextButton.classList.remove("hidden");
+
     }
 
     that.setUpQuestionAndAnswers = setUpQuestionAndAnswers;

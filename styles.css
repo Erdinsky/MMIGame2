@@ -17,6 +17,20 @@ body {
 
 }
 
+.lockAnswer{
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    border-color: cadetblue;
+    background-color: cadetblue;
+    margin-left: 50%;
+
+    font-size: 20px;
+    font-style: italic;
+
+
+}
+
 .categoryFrame{
     height: 50px;
     width:200px;

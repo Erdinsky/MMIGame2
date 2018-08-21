@@ -24,7 +24,8 @@ ModelGame.MainView = function (){
       answerFrame2,
       answerFrame3,
       answerFrame4,
-      control;
+      control,
+      lockAnswerButton;
 
 
   function init (){
@@ -42,12 +43,15 @@ ModelGame.MainView = function (){
   }
 
   function handleNextButton(){
-
+      nextButton.innerHTML = "Nächste Frage";
       answerFrame1 = document.querySelector(".answerFrame1");
       answerFrame2 = document.querySelector(".answerFrame2");
       answerFrame3 = document.querySelector(".answerFrame3");
       answerFrame4 = document.querySelector(".answerFrame4");
 
+
+      lockAnswerButton = document.querySelector(".lockAnswer");
+      lockAnswerButton.classList.add("hidden");
 
       answerFrame1.style.background = "white";
       answerFrame2.style.background = "white";
@@ -77,7 +81,7 @@ ModelGame.MainView = function (){
 
           if(limitedIndex !== "") {
 
-              console.log("LIMITED INDEX : " + limitedIndex);
+
               switch (limitedIndex){
 
                   case "0":
@@ -99,10 +103,7 @@ ModelGame.MainView = function (){
 
           }
       } else if (limitIndex1 === true && limitIndex2 !== true && limitIndex3 !== true) {
-              console.log("1.if");
-              console.log("ERST BOOL : " + limitIndex1);
-              console.log("ZWEIT BOOL: " + limitIndex2);
-              console.log("DRITT BOOL : " + limitIndex3);
+
 
               updatedRandomIndexGenerator1 = randomIndexGenerator.generateRandomIndexForOneLimitedIndex(1);
               indexLimitArr[updatedRandomIndexGenerator1]++;
@@ -117,10 +118,7 @@ ModelGame.MainView = function (){
               console.log(indexLimitArr);
 
           } else if (limitIndex2 === true && limitIndex1 !== true && limitIndex3 !== true) {
-              console.log("2.if");
-              console.log("ERST BOOL : " + limitIndex1);
-              console.log("ZWEIT BOOL: " + limitIndex2);
-              console.log("DRITT BOOL : " + limitIndex3);
+
               updatedRandomIndexGenerator2 = randomIndexGenerator.generateRandomIndexForTwoLimitedIndex(2);
               indexLimitArr[updatedRandomIndexGenerator2]++;
               if (indexLimitArr[0] === 3) {
@@ -132,10 +130,7 @@ ModelGame.MainView = function (){
               categories.init(updatedRandomIndexGenerator2);
               console.log(indexLimitArr);
           } else if (limitIndex3 === true && limitIndex2 !== true && limitIndex1 !== true) {
-              console.log("3.if");
-              console.log("ERST BOOL : " + limitIndex1);
-              console.log("ZWEIT BOOL: " + limitIndex2);
-              console.log("DRITT BOOL : " + limitIndex3);
+
               updatedRandomIndexGenerator3 = randomIndexGenerator.generateRandomIndexForThreeLimitedIndex(3);
               indexLimitArr[updatedRandomIndexGenerator3]++;
               if (indexLimitArr[0] === 3) {
@@ -148,10 +143,7 @@ ModelGame.MainView = function (){
               categories.init(updatedRandomIndexGenerator3);
               console.log(indexLimitArr);
           } else if(limitIndex1 === true && limitIndex2 === true && limitIndex3 !== true){
-              console.log("4.if");
-              console.log("ERST BOOL : " + limitIndex1);
-              console.log("ZWEIT BOOL: " + limitIndex2);
-              console.log("DRITT BOOL : "+ limitIndex3);
+
 
 
               indexLimitArr[2]++;
@@ -162,10 +154,7 @@ ModelGame.MainView = function (){
 
              categories.init(2);
           } else if(limitIndex1 !== true && limitIndex2 === true && limitIndex3 === true){
-              console.log("5.if");
-              console.log("ERST BOOL : " + limitIndex1);
-              console.log("ZWEIT BOOL: " + limitIndex2);
-              console.log("DRITT BOOL : "+ limitIndex3);
+
 
               indexLimitArr[0]++;
               console.log(indexLimitArr);
@@ -174,10 +163,7 @@ ModelGame.MainView = function (){
               }
               categories.init(0);
           } else if(limitIndex1 === true && limitIndex2 !== true && limitIndex3 === true){
-              console.log("6.if");
-              console.log("ERST BOOL : " + limitIndex1);
-              console.log("ZWEIT BOOL: " + limitIndex2);
-              console.log("DRITT BOOL : "+ limitIndex3);
+
               indexLimitArr[1]++;
               console.log(indexLimitArr);
               if(indexLimitArr[1] === 3){
@@ -185,11 +171,7 @@ ModelGame.MainView = function (){
               }
               categories.init(1);
           } else if(limitIndex1 === true && limitIndex2 === true && limitIndex3 === true){
-              console.log(indexLimitArr);
-              console.log("7.if");
-              console.log("ERST BOOL : " + limitIndex1);
-              console.log("ZWEIT BOOL: " + limitIndex2);
-              console.log("DRITT BOOL : "+ limitIndex3);
+
               console.log("GAME OVER!");
 
 
