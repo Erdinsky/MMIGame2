@@ -3,26 +3,30 @@ var ModelGame = ModelGame || {};
 ModelGame.CategoryView = function () {
     var that = {},
         categoryLabel,
+        pictureFrame,
         questionFrame,
         answerFrame1,
         answerFrame2,
         answerFrame3,
         answerFrame4,
-        nextButton;
+        nextButton,
+        loggedInButton;
 
     function setUpCategoryLabel(label){
         categoryLabel = document.querySelector(".categoryFrame");
         categoryLabel.innerHTML = ""+label;
     }
     //METHOD GETS QUESTION AND ANSWERS FROM "CATEGORIES.JS"
-    function setUpQuestionAndAnswers(question, answer1, answer2, answer3, answer4){
-
+    function setUpQuestionAndAnswers(question, answer1, answer2, answer3, answer4, picture){
+        pictureFrame = document.querySelector(".imageFrame");
         questionFrame = document.querySelector(".questionFrame");
         answerFrame1 = document.querySelector(".answerFrame1");
         answerFrame2 = document.querySelector(".answerFrame2");
         answerFrame3 = document.querySelector(".answerFrame3");
         answerFrame4 = document.querySelector(".answerFrame4");
 
+        console.log(picture);
+        pictureFrame.src = picture;
         questionFrame.innerHTML = ""+question;
         answerFrame1.innerHTML = ""+answer1;
         answerFrame2.innerHTML = ""+answer2;
@@ -33,13 +37,14 @@ ModelGame.CategoryView = function () {
 
         nextButton.classList.add("hidden");
 
-
-
+        loggedInButton = document.querySelector(".lockAnswer");
+        loggedInButton.addEventListener("click", onLoggedButtonClicked);
         //WHAT HAPPENS IF A SPECIFIC ANSWER IS PRESSED
         answerFrame1.addEventListener("click", answerFrame1Clicked);
         answerFrame2.addEventListener("click", answerFrame2Clicked);
         answerFrame3.addEventListener("click", answerFrame3Clicked);
         answerFrame4.addEventListener("click", answerFrame4Clicked);
+
 
 
 
@@ -106,6 +111,13 @@ ModelGame.CategoryView = function () {
         answerFrame1.style.background = "white";
 
 
+    }
+
+    function onLoggedButtonClicked(){
+        answerFrame1.removeEventListener("click", answerFrame1Clicked);
+        answerFrame2.removeEventListener("click", answerFrame2Clicked);
+        answerFrame3.removeEventListener("click", answerFrame3Clicked);
+        answerFrame4.removeEventListener("click", answerFrame4Clicked);
     }
 
     that.setUpQuestionAndAnswers = setUpQuestionAndAnswers;

@@ -6,22 +6,27 @@
     <title>MMIGame</title>
 </head>
 <body>
-    <div class="categoryFrame ">Test</div>
+    <div class="categoryFrame ">Kategorie</div>
 
-    <div class="imageFrame"></div>
+    <img class="imageFrame">
 
     <div class="questionFrame"></div>
 
     <div class="answers">
-        <button class="answerFrame1" type="submit">TEST</button>
-        <button class="answerFrame2">TEST</button>
-        <button class="answerFrame3 ">TEST</button>
-        <button class="answerFrame4">TEST</button>
+        <button class="answerFrame1" type="submit">-</button>
+        <button class="answerFrame2">-</button>
+        <button class="answerFrame3 ">-</button>
+        <button class="answerFrame4">-</button>
 
     </div>
 
+
+
+    <div class="scoreFrame hidden"></div>
+
     <button class="lockAnswer hidden" type="submit">Antwort einloggen</button>
     <button class="nextButton" type="submit" >Start Game</button>
+    <button class="gameOverButton hidden" type="submit">Spiel Neustarten</button>
 
 
 
@@ -38,5 +43,6 @@
 <script src="resources/RandomIndexGenerator.js"></script>
 <script src="resources/CategoryView.js"></script>
 <script src="resources/StadtCategory.js"></script>
+<script src="resources/ScoreView.js"></script>
 <script> ModelGame.init() </script>
 </html>

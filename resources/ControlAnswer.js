@@ -8,18 +8,13 @@ var pickedAnswer = "";
 var lockedInButton = document.querySelector(".lockAnswer");
 var nextButton = document.querySelector(".nextButton");
 var score = 0;
+var scoreView;
 
 
 function ControlAnswer(question){
     questionFromCategory = question;
 
 }
-
-
-
-
-
-
 
 ControlAnswer.prototype.checkIfRightAnswerIsPicked = function(){
     answerField1 = document.querySelector(".answerFrame1");
@@ -74,14 +69,19 @@ answerField4Clicked = function (){
 
 
 onLockedInButtonClicked = function () {
+    answerField1.removeEventListener("click", answerField1Clicked);
+    answerField2.removeEventListener("click", answerField2Clicked);
+    answerField3.removeEventListener("click", answerField3Clicked);
+    answerField4.removeEventListener("click", answerField4Clicked);
     nextButton.classList.remove("hidden");
      console.log("GEPICKTE ANTWORT : " + pickedAnswer);
      console.log("RICHTIGE ANTWORT : "+ questionFromCategory.rightAnswer);
 
      if(pickedAnswer === questionFromCategory.rightAnswer){
+         scoreView = ModelGame.ScoreView();
          console.log(pickedAnswer + " war die richtige Antwort");
          score++;
-
+         scoreView.addScore(score);
          console.log("Dein Score lautet: " + score);
 
      } else {
@@ -94,3 +94,5 @@ onLockedInButtonClicked = function () {
 
 
 };
+
+

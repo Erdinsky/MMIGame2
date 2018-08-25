@@ -7,7 +7,8 @@ var questionAndAnswer1 = ({
     rightAnswer: "628.032",
     secondAnswer: "230.002",
     thirdAnswer: "1.123.000",
-    fourthAnswer: "890.932"
+    fourthAnswer: "890.932",
+    link: "https://media.gettyimages.com/videos/schlossplatz-in-stuttgart-video-id532195410?s=640x640"
 
 });
 
@@ -16,7 +17,8 @@ var questionAndAnswer2 = ({
     rightAnswer: "3.574.830",
     secondAnswer: "230.002",
     thirdAnswer: "1.123.000",
-    fourthAnswer: "890.932"
+    fourthAnswer: "890.932",
+    link :"https://www.irishtimes.com/polopoly_fs/1.2560676.1457115180!/image/image.jpg_gen/derivatives/box_620_330/image.jpg"
 
 });
 
@@ -25,8 +27,8 @@ var questionAndAnswer3 = ({
     rightAnswer: "1.810.438",
     secondAnswer: "230.002",
     thirdAnswer: "1.123.000",
-    fourthAnswer: "890.932"
-
+    fourthAnswer: "890.932",
+    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGBtl05FgGbfAebnfR1Peu2FnOxGjAScPsu0blffa_kZHaR1bO"
 });
 
 Array.prototype.remove = function(from, to) {
@@ -46,6 +48,7 @@ var rightAnswer;
 var secondAnswer;
 var thirdAnswer;
 var fourthAnswer;
+var picture;
 
 var categoryView;
 var INKREMENTER = 0;
@@ -75,10 +78,10 @@ StadtCategory.prototype.generateQuestionAndAnswer = function (){
         secondAnswer = arrayOfQuestiondAndAnswers[randomNumber1].secondAnswer;
         thirdAnswer = arrayOfQuestiondAndAnswers[randomNumber1].thirdAnswer;
         fourthAnswer = arrayOfQuestiondAndAnswers[randomNumber1].fourthAnswer;
-
-
+        picture = arrayOfQuestiondAndAnswers[randomNumber1].link;
+ 
         categoryView = ModelGame.CategoryView();
-        categoryView.setUpQuestionAndAnswers(question, rightAnswer, secondAnswer, thirdAnswer, fourthAnswer);
+        categoryView.setUpQuestionAndAnswers(question, rightAnswer, secondAnswer, thirdAnswer, fourthAnswer, picture);
 
 
         controlInstance = new ControlAnswer(arrayOfQuestiondAndAnswers[randomNumber1]);
@@ -100,10 +103,12 @@ StadtCategory.prototype.generateQuestionAndAnswer = function (){
         secondAnswer =  updatedAnswerAndQuestionArray[randomNumber1].secondAnswer;
         thirdAnswer =  updatedAnswerAndQuestionArray[randomNumber1].thirdAnswer;
         fourthAnswer =  updatedAnswerAndQuestionArray[randomNumber1].fourthAnswer;
+        picture = updatedAnswerAndQuestionArray[randomNumber1].link;
+
 
 
         categoryView = ModelGame.CategoryView();
-        categoryView.setUpQuestionAndAnswers(question, rightAnswer, secondAnswer, thirdAnswer, fourthAnswer);
+        categoryView.setUpQuestionAndAnswers(question, rightAnswer, secondAnswer, thirdAnswer, fourthAnswer, picture);
 
 
         controlInstance = new ControlAnswer(updatedAnswerAndQuestionArray[randomNumber1]);
@@ -126,10 +131,11 @@ StadtCategory.prototype.generateQuestionAndAnswer = function (){
         secondAnswer =  updatedAnswerAndQuestionArray2[randomNumber1].secondAnswer;
         thirdAnswer =  updatedAnswerAndQuestionArray2[randomNumber1].thirdAnswer;
         fourthAnswer =  updatedAnswerAndQuestionArray2[randomNumber1].fourthAnswer;
+        picture = updatedAnswerAndQuestionArray2[randomNumber1].link;
 
 
         categoryView = ModelGame.CategoryView();
-        categoryView.setUpQuestionAndAnswers(question, rightAnswer, secondAnswer, thirdAnswer, fourthAnswer);
+        categoryView.setUpQuestionAndAnswers(question, rightAnswer, secondAnswer, thirdAnswer, fourthAnswer, picture);
 
         controlInstance = new ControlAnswer(updatedAnswerAndQuestionArray2[randomNumber1]);
         controlInstance.checkIfRightAnswerIsPicked();

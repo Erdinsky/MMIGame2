@@ -25,7 +25,8 @@ ModelGame.MainView = function (){
       answerFrame3,
       answerFrame4,
       control,
-      lockAnswerButton;
+      lockAnswerButton,
+      scoreView;
 
 
   function init (){
@@ -170,9 +171,12 @@ ModelGame.MainView = function (){
                   limitIndex2 = true;
               }
               categories.init(1);
+
           } else if(limitIndex1 === true && limitIndex2 === true && limitIndex3 === true){
 
-              console.log("GAME OVER!");
+            scoreView = ModelGame.ScoreView();
+            scoreView.showScore();
+
 
 
           }
